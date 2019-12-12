@@ -1,8 +1,16 @@
+import re
 from .models import Element
 
 class DompyParser:
     @staticmethod
     def parse(input):
+        input = input.replace('<!DOCTYPE html>', '')
+        input = re.sub('\s+', ' ', input)
+        input = re.sub('\<\!\-\-(.)*\-\-\>', '', input)
+        input = re.sub('\s+', ' ', input)
+        input = input.lstrip()
+        with open('temp.html', 'w') as f:
+            f.write(input)
         position = 0
         for token in input:
             position += 1

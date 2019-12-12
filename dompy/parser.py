@@ -12,16 +12,11 @@ class DompyParser:
     @staticmethod
     def __resolveTag(cls, tagToken: str) -> Element:
         children = []
-        if (cls.__hasChildren(tagToken)):
-            for child in cls.__parseChildren(tagToken):
-                children.append(DompyParser.__resolveTag(child))
+        for child in cls.__parseChildren(tagToken):
+            children.append(DompyParser.__resolveTag(child))
         element = cls.__parseTag(tagToken)
         element.children = children
         return element
-
-    @staticmethod
-    def __hasChildren(token):
-        pass
 
     @staticmethod
     def __parseChildren(token):
@@ -43,3 +38,4 @@ class DompyParser:
                     element.classList.append(value)
                 else:
                     element.attributes[key] = value
+        return element

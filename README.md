@@ -19,8 +19,8 @@ pip install dumpy
 >>> elements[0].innerHTML
 'The standard Lorem Ipsum passage, used since the 1500s'
 ```
-
-**<center> or </center>**
+<!-- **<center> or </center>** -->
+**<p align='center'>or<p>**
 
 ```python
 >>> from dompy import DompyParser

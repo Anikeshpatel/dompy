@@ -1,7 +1,6 @@
-# Dompy
+<p align='center'><img src="https://raw.githubusercontent.com/Anikeshpatel/dompy/master/docs/assets/logos/Group%205.png" /></p>
+<!-- # Dompy -->
 JavaScript Dom Api for Python, Html Parser and a Web scraping tool in python
-
-<div style="text-align:center"><img src="..." /></div>
 
 ##### Installation
 ```bash

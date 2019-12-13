@@ -14,7 +14,7 @@ pip install dompy-parser
 >>> document.title
 'Lorem Ipsum - All the facts - Lipsum generator'
 >>> elements = document.getElementsByTag('h3')
->>> elements.length
+>>> len(elements)
 5
 >>> elements[0].innerHTML
 'The standard Lorem Ipsum passage, used since the 1500s'

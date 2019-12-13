@@ -1,6 +1,8 @@
 # Dompy
 JavaScript Dom Api for Python, Html Parser and a Web scraping tool in python
 
+<div style="text-align:center"><img src="..." /></div>
+
 ##### Installation
 ```bash
 pip install dompy-parser

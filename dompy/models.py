@@ -8,10 +8,11 @@ class Element:
         self.classList = []
         self.attributes: Dict[str, Any] = {}
         self.innerHTML = self.children
-        self.content = ''
+        self.content = self.innerHTML
 
     def __str__(self):
-        return f'<{self.tag}>: id=\'{self.id}\' class=\'{[className for className in self.classList]}\''
+        return f'{self.__dict__}'
+        # return f'<{self.tag}>: id=\'{self.id}\' class=\'{[className for className in self.classList]}\''
 
 class Tags:
     DIV = 'div'
@@ -48,3 +49,28 @@ class Tags:
     FIGURE = 'figure'
     FIG_CAPTION = 'figcaption'
     BUTTON = 'button'
+    AREA = 'area'
+    BASE = 'base'
+    BR = 'br'
+    EMBED = 'embed'
+    HR = 'hr'
+    IFRAME = 'iframe'
+    PARAM = 'param'
+    TRACK = 'track'
+    COMMAND = 'command'
+
+    selfClosingTags = {
+        AREA,
+        IMG,
+        BASE,
+        BR,
+        EMBED,
+        META,
+        INPUT,
+        SOURCE,
+        HR,
+        IFRAME,
+        PARAM,
+        TRACK,
+        LINK
+    }

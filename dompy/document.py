@@ -1,5 +1,6 @@
+import requests
 from typing import List, Dict, IO
-from .models import Element
+from .models import Element, Tags
 from .parser import DompyParser
 
 class Document:
@@ -30,27 +31,42 @@ class Document:
     def __init__(self, root: Element):
         self.root = root
         self.title:str = ''
+        for element in self.root.children:
+            if element.tag == Tags.TITLE:
+                self.title = element.innerHTML
+                break
     
     def getElementById(self, id: str) -> Element:
-        pass
+        for element in self.root.children:
+            if element.id == id:
+                return element
+        return None
 
     def getElementsByClass(self, className: str) -> List[Element]:
-        pass
+        result = []
+        for element in self.root.children:
+            if className in element.classList:
+                result.append(element)
+        return result
 
     def getElementsByTag(self, tag):
-        pass
+        result = []
+        for element in self.root.children:
+            if element.tag == tag:
+                result.append(element)
+        return result
 
     @classmethod
     def fromURL(cls, url):
-        pass
+        return cls(DompyParser.parse(requests.get(url).text))
 
     @classmethod
     def fromURI(cls, uri):
-        pass
+        raise Exception("Not Implemented Yet!")        
 
     @classmethod
-    def fromString(string):
-        pass
+    def fromString(cls, string):
+        return cls(DompyParser.parse(string))
 
     @classmethod
     def fromFile(cls, file: IO):

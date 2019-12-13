@@ -26,7 +26,7 @@ pip install dompy-parser
 >>> from dompy import DompyParser
 >>> document = DompyParser.parse('<div><h3 color="blue" align="center">Abc</h3><h3>Xyz</h3></div>')
 >>> elements = document.getElementsByTag('h3')
->>> elements.length
+>>> len(elements)
 2
 >>> elements[0].innerHTML
 'Abc'

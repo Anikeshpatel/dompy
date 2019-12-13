@@ -3,7 +3,7 @@ JavaScript Dom Api for Python, Html Parser and a Web scraping tool in python
 
 ##### Installation
 ```bash
-pip install dumpy
+pip install dompy-parser
 ```
 
 ##### Basic API

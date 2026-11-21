@@ -1,2 +1,10 @@
-/dompy/__pycache__
-/dist
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+/build/
+/dist/
+*.egg-info/
+.venv/
+.ruff_cache/

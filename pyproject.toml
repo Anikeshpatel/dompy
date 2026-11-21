@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dompy-parser"
+version = "0.1"
+description = "HTML5 parsing and browser-style DOM APIs for Python"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [{ name = "Anikesh Patel", email = "developeranikesh@gmail.com" }]
+keywords = ["html", "html5", "dom", "parser", "web scraping"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "beautifulsoup4>=4.14,<5",
+    "justhtml>=3.17.1,<3.18",
+    "soupsieve>=2.10,<2.11",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "pytest-cov>=6,<8"]
+browser = ["playwright>=1.50,<2"]
+
+[project.urls]
+Repository = "https://github.com/Anikeshpatel/dompy"
+
+[tool.setuptools]
+packages = ["dompy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

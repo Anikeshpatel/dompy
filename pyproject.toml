@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dompy-parser"
-version = "0.1"
+version = "0.2.0"
 description = "HTML5 parsing and browser-style DOM APIs for Python"
 readme = "README.md"
 requires-python = ">=3.10"
